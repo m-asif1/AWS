@@ -37,8 +37,8 @@ started with AWS IoT core, you just need to follow the steps given below to succ
 -  Need to configure device certificate. So here you can auto-generate a new certificate.
 - we need to attach a policy to the Things, need to create a policy first.
 - create policy, give any name to the policy. For example, name **ESP32_Policy**.
-- In add statement part, Under the action, type IoT:Connect, and resorce ARN :client/ESP32_DH11, and effect allow.
-- Another add statement part, Under the action, type IoT:Receive, and resorce ARN :topic/esp32/sub, and effect allow.
+- In add statement part, Under the action, type IoT:Connect, and resource ARN :client/ESP32_DH11, and effect allow.
+- Another add statement part, Under the action, type IoT:Receive, and resource ARN :topic/esp32/sub, and effect allow.
 - create the policy, so policy has been created successfully.
 
 Now go back to Create Thing, need to attach the policies to the certificate. So select the appeared policy and click on create a thing.
