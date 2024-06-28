@@ -5,13 +5,13 @@ In this how you can connect the ESP with AWS IoT Core & publish sensor reading t
 
 ## Hardware Setup::
 
-![alt text](./image/image.PNG)
+![alt text](image/image.png)
 
 
 Connect the DHT11 Sensor to ESP Board as per circuit diagram here.
 
 ## Amazon AWS IoT Core?
-![alt text](image\image1.png)
+![alt text](image/image1.png)
 
 AWS offers Internet of Things (IoT) services and solutions to connect and manage of devices. These cloud services connect your IoT devices to other devices and AWS cloud services. AWS IoT provides device software that can help you integrate your IoT devices into AWS IoT-based solutions. To manage and support your IoT devices in the field, AWS IoT Core supports these protocols:
 
