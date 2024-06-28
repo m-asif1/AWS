@@ -268,11 +268,11 @@ Once all the modification is done, connect the ESP to your computer to upload th
 
 - Open the Serial Monitor. The ESP will try connecting to the WiFi Network. Once it gets connected to the WiFi Network, it will try connecting to the AWS IoT Server.
 
-  ![alt text](image\image2.png)
+  ![alt text](image/image2.png)
 
 
 ## Sensor Data to AWS Dashboard
-|![alt text](image\image3.png) | ![alt text](image\image4.png)|
+|![alt text](image/image3.png) | ![alt text](image/image4.png)|
 | - | - |
 
 same thing should also be posted to the AWS Server. To check, go to **AWS IOT => test section**. Under the test section, option for subscribe and publish.   
@@ -284,14 +284,14 @@ same thing should also be posted to the AWS Server. To check, go to **AWS IOT =>
 
 ## **Store AWS IoT data into S3 Bucket**
 ### Create S3 Bucket:
-![alt text](image\image5.png)
+![alt text](image/image5.png)
 
 AWS account, type S3 into the search box and select S3 from the services menu.
 - Create **bucket**
 - Enter the Bucket name as **s3-bucket-for-iot-data** and select an AWS region.
 
 ### Create IoT rule to send data to the S3:
-![alt text](image\image6.png)
+![alt text](image/image6.png)
 
 AWS account, type **IoT Core** and pick IoT Core from the services.
 - In IoT Core, click rule and create the rule to transfer IoT data to the S3 bucket.
@@ -299,7 +299,7 @@ AWS account, type **IoT Core** and pick IoT Core from the services.
 - In Rule Query statement as **SELECT * FROM ‘iotdevice/+/datas3**, where * denotes reading the whole data sequence from the IoT topic iotdevice/+/datas3 and + denotes a wildcard character.
 - Add an action to a rule, select **Add action**
 - click **Store a message in an Amazon S3 bucket**, and then click **Configure action**.
-![alt text](image\image7.png)
+![alt text](image/image7.png)
 
 - section **Configure action** Choose name is **s3-bucket-for-iot-data**, for S3 bucket name. In the key, type **${cast(topic(2) AS DECIMAL)}**
 - Need to provide role for AWS IoT rule to send data to S3 to **create Role**, enter **Iotdata_S3_role** as the role name.
@@ -308,11 +308,12 @@ AWS account, type **IoT Core** and pick IoT Core from the services.
 ### 3. Test IoT rule and S3:
 To test an IoT rule, go **AWS IoT Core**, select **Test**, and then **MQTT test client**. Click the **publish to a topic** and enter **iotdevice/55/datas3** as the Topic name and **Message payload {“temperature”: 22, “humidity”: 88}**. To publish the data, click the **Publish** option. Now the data is published.
 
-![alt text](image\image8.png)
+![alt text](image/image8.png)
 
 - To verify the published data, open the **S3** console and choose the bucket, creating the first step, **s3-bucket-for-iot-data** and find the created folder **55** and open that folder to see the published data.
 - Published data found in objects console; click the time streamed data and Download to see the data.
-![alt text](image\image9.png)
+  
+![alt text](image/image9.png)
 
 ## Conclusion:
 As a result, AWS IoT Core with the IoT Rule engine will assist in filtering IoT topics and the storage of data in AWS S3. AWS IoT core can receive and send of IoT data at a time, and the AWS IoT Rule engine can filter MQTT topics from IoT devices and send them to other AWS Services. For data backup and archive, AWS S3 will be used.
