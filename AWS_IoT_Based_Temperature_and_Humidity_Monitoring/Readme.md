@@ -5,7 +5,7 @@ In this how you can connect the ESP with AWS IoT Core & publish sensor reading t
 
 ## Hardware Setup::
 
-![alt text](image/image.PNG)
+![alt text](./image/image.PNG)
 
 
 Connect the DHT11 Sensor to ESP Board as per circuit diagram here.
